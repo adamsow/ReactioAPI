@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReactioAPI.Core\ReactioAPI.Core.csproj" />
+    <ProjectReference Include="..\ReactioAPI.Infrastructure\ReactioAPI.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
