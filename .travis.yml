@@ -3,3 +3,9 @@ solution: ./ReactioAPI/ReactioAPI.sln
 dist: trusty
 sudo: required
 mono: none
+script:
+  - xbuild /p:Configuration=Debug ./ReactioAPI/ReactioAPI.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore ./ReactioAPI/ReactioAPI.sln
