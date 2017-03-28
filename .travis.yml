@@ -1,8 +1,8 @@
 language: csharp
-solution: ./Reactio/Reactio.sln
+solution: ./ReactioAPI/ReactioAPI.sln
 script:
-  - xbuild /p:Configuration=Debug ./Reactio/Reactio.sln
+  - xbuild /p:Configuration=Debug ./ReactioAPI/ReactioAPI.sln
 before_install:
   - sudo apt-get install nunit-console
 before_script:
-  - nuget restore ./Reactio/Reactio.sln
+  - nuget restore ./ReactioAPI/ReactioAPI.sln
