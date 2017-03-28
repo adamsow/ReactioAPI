@@ -2,6 +2,7 @@ language: csharp
 dist: trusty
 sudo: required
 mono: none
+dotnet: 1.0.1
 script:
   - cd ReactioAPI/ReactioAPI/
   - dotnet restore && npm install
