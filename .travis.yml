@@ -5,5 +5,5 @@ mono: none
 dotnet: 1.0.1
 script:
   - cd ReactioAPI/ReactioAPI/
-  - dotnet restore && npm install
+  - dotnet restore
   - dotnet --verbose build -c Release
