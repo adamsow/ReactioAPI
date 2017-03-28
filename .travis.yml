@@ -3,6 +3,6 @@ dist: trusty
 sudo: required
 mono: none
 script:
-  - cd ReactioAPI/ReactioAPI
+  - cd ReactioAPI/ReactioAPI/
   - dotnet restore && npm install
   - dotnet --verbose build -c Release
