@@ -8,4 +8,4 @@ script:
 before_install:
   - sudo apt-get install nunit-console
 before_script:
-  - nuget restore ./ReactioAPI/ReactioAPI.sln
+  - dotnet restore ./ReactioAPI/ReactioAPI.sln
