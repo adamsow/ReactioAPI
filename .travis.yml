@@ -7,3 +7,6 @@ script:
   - cd ReactioAPI/ReactioAPI/
   - dotnet restore
   - dotnet build
+  - cd ../ReactioAPI.Tests/
+  - dotnet restore
+  - dotnet test
