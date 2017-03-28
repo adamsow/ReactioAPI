@@ -9,4 +9,5 @@ script:
   - dotnet build
   - cd ../ReactioAPI.Tests/
   - dotnet restore
+  - dotnet build
   - dotnet test
