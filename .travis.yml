@@ -1,4 +1,4 @@
 language: csharp
 solution: ./ReactioAPI/ReactioAPI.sln
 mono: none
-dotnet: 1.0.1
+dotnet: 1.0.0-preview3-004056
