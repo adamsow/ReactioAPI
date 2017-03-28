@@ -4,8 +4,6 @@ dist: trusty
 sudo: required
 mono: none
 script:
-  - xbuild /p:Configuration=Debug ./ReactioAPI/ReactioAPI.sln
-before_install:
-  - sudo apt-get install nunit-console
-before_script:
-  - dotnet restore ./ReactioAPI/ReactioAPI.sln
+  - cd ReactioAPI/
+  - dotnet restore && npm install
+  - dotnet --verbose build -c Release
