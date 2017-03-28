@@ -6,4 +6,4 @@ dotnet: 1.0.1
 script:
   - cd ReactioAPI/ReactioAPI/
   - dotnet restore
-  - dotnet --verbose build -c Release
+  - dotnet build
