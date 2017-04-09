@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ReactioAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class ReactionsController : Controller
     {
         // GET api/values
         [HttpGet]
