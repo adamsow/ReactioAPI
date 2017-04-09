@@ -10,5 +10,7 @@ namespace Reactio.Infrastructure.DTO
         public IEnumerable<SubstrateDTO> Substrates { get; set; }
 
         public IEnumerable<ProductDTO> Products { get; set; }
+
+        public string Name { get; set; }
     }
 }

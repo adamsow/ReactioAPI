@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ReactioAPI.Core.Repositories;
+using ReactioAPI.Infrastructure.Repositories;
+using ReactioAPI.Infrastructure.Services;
+using Reactio.Infrastructure.Mappers;
+using ReactioAPI.Core.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ReactioAPI
 {
@@ -29,6 +31,11 @@ namespace ReactioAPI
         {
             // Add framework services.
             services.AddMvc();
+            services.AddScoped<IReactionRepository, DBReactionRepository>();
+            services.AddScoped<IReactionService, ReactionService>();
+            services.AddSingleton(AutoMapperConfig.Initialize());
+            services.AddDbContext<ReactioContext>(options 
+                => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

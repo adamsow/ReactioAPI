@@ -6,8 +6,20 @@ namespace Reactio.Core.Domain
     {
         public int ID { get; protected set; }
 
-        public IEnumerable<Substrate> Substrates { get; protected set; }
+        public string Name { get; protected set; }
 
-        public IEnumerable<Product> Products { get; protected set; }
+        public virtual ICollection<Substrate> Substrates { get; protected set; }
+
+        public virtual ICollection<Product> Products { get; protected set; }
+
+        public Factor? Factor { get; protected set; }
+
+        public bool IsEndothermic { get; protected set; }
+    }
+
+    public enum Factor
+    {
+        Light,
+        Temperature,
     }
 }
