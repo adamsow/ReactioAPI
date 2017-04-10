@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ReactioAPI.Infrastructure.Services;
 using Reactio.Infrastructure.DTO;
+using NLog;
 
 namespace ReactioAPI.Controllers
 {
@@ -12,6 +13,8 @@ namespace ReactioAPI.Controllers
     public class ReactionsController : Controller
     {
         private readonly IReactionService m_reactionService;
+
+        private static Logger m_logger = LogManager.GetCurrentClassLogger();
 
         public ReactionsController(IReactionService reactionService)
         {
@@ -22,6 +25,7 @@ namespace ReactioAPI.Controllers
         [HttpGet]
         public async Task<IEnumerable<ReactionDTO>> Get()
         {
+            m_logger.Debug("Get reactions fired");
             return await m_reactionService.GetReactionsAsync();
         }
 

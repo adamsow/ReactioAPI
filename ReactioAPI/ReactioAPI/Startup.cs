@@ -9,6 +9,8 @@ using ReactioAPI.Infrastructure.Services;
 using Reactio.Infrastructure.Mappers;
 using ReactioAPI.Core.Data;
 using Microsoft.EntityFrameworkCore;
+using NLog.Extensions.Logging;
+using NLog.Web;
 
 namespace ReactioAPI
 {
@@ -41,8 +43,8 @@ namespace ReactioAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            loggerFactory.AddNLog();
+            env.ConfigureNLog("NLog.config");
 
             app.UseMvc();
         }

@@ -22,5 +22,10 @@
   <ItemGroup>
     <ProjectReference Include="..\ReactioAPI.Infrastructure\ReactioAPI.Infrastructure.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>

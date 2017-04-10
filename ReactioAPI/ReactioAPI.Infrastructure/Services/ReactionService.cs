@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using NLog;
 using Reactio.Core.Domain;
 using Reactio.Infrastructure.DTO;
 using ReactioAPI.Core.Repositories;
@@ -14,6 +15,8 @@ namespace ReactioAPI.Infrastructure.Services
 
         private readonly IMapper m_mapper;
 
+        private static Logger m_logger = LogManager.GetCurrentClassLogger();
+
         public ReactionService(IReactionRepository reactionRepository, IMapper mapper)
         {
             m_reactionRepository = reactionRepository;
@@ -28,6 +31,7 @@ namespace ReactioAPI.Infrastructure.Services
             foreach (var reaction in reactions)
             {
                 reactionsDTO.Add(m_mapper.Map<Reaction, ReactionDTO>(reaction));
+                m_logger.Debug("reaction name {0}", reaction.Name);
             }
 
             return reactionsDTO;
