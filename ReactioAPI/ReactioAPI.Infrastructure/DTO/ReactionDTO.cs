@@ -1,4 +1,5 @@
 ﻿using Reactio.Core.Domain;
+using ReactioAPI.Core.Domain;
 using System.Collections.Generic;
 
 namespace Reactio.Infrastructure.DTO
@@ -10,6 +11,10 @@ namespace Reactio.Infrastructure.DTO
         public IEnumerable<SubstrateDTO> Substrates { get; set; }
 
         public IEnumerable<ProductDTO> Products { get; set; }
+
+        public Factor? Factor { get; set; }
+
+        public ReactionType? Type { get; set; }
 
         public string Name { get; set; }
     }

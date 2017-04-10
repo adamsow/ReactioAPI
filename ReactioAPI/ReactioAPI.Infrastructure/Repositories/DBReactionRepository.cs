@@ -22,10 +22,9 @@ namespace ReactioAPI.Infrastructure.Repositories
         {
             using (m_reactioContext)
             {
-                return await Task.Run(() => m_reactioContext.Reactions
-                                                            .Include(x => x.Substrates)
-                                                            .Include(x => x.Products)
-                                                            .ToList());
+                return await Task.Run(() => m_reactioContext.Reactions.Include(x => x.Substrates)
+                                                                      .Include(x => x.Products)
+                                                                      .ToList());
             }
         }
     }

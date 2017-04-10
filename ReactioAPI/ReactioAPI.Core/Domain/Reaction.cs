@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ReactioAPI.Core.Domain;
+using System.Collections.Generic;
 
 namespace Reactio.Core.Domain
 {
@@ -14,12 +15,8 @@ namespace Reactio.Core.Domain
 
         public Factor? Factor { get; protected set; }
 
-        public bool IsEndothermic { get; protected set; }
-    }
+        public ReactionType? Type { get;  protected set; }
 
-    public enum Factor
-    {
-        Light,
-        Temperature,
+        public bool IsEndothermic { get; protected set; }
     }
 }
