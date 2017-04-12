@@ -1,4 +1,5 @@
-﻿using ReactioAPI.Core.Domain;
+﻿using Newtonsoft.Json;
+using ReactioAPI.Core.Domain;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -14,15 +15,15 @@ namespace Reactio.Core.Domain
         public Reaction(string name, 
                         IEnumerable<Substrate> substrates, 
                         IEnumerable<Product> products, 
-                        Factor? factor, 
+                        IEnumerable<Factor> factors, 
                         ReactionType type,
                         bool isEndothermic)
         {
             Name = name;
             Substrates = substrates.ToList();
             products = products.ToList();
-            Factor = factor?.ToString();
-            Type = type.ToString();
+            Factor = JsonConvert.SerializeObject(factors);
+            Type = type;
             IsEndothermic = isEndothermic;
         }
 
@@ -34,16 +35,10 @@ namespace Reactio.Core.Domain
 
         public virtual ICollection<Product> Products { get; protected set; }
 
-        [NotMapped]
-        public Factor? FactorType { get; protected set; }
-
-        [NotMapped]
-        public ReactionType ReactionType { get; protected set; }
-
         public bool IsEndothermic { get; protected set; }
 
         public string Factor { get; protected set; }
 
-        public string Type { get; protected set; }
+        public ReactionType Type { get; protected set; }
     }
 }
