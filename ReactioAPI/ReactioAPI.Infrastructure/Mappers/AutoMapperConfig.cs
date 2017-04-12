@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Reactio.Core.Domain;
-using Reactio.Infrastructure.DTO;
+using ReactioAPI.Core.Domain;
+using ReactioAPI.Infrastructure.DTO;
 
-namespace Reactio.Infrastructure.Mappers
+namespace ReactioAPI.Infrastructure.Mappers
 {
     public static class AutoMapperConfig
     {

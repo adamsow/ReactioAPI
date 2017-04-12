@@ -1,4 +1,4 @@
-﻿namespace Reactio.Infrastructure.DTO
+﻿namespace ReactioAPI.Infrastructure.DTO
 {
     public class ProductDTO
     {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Reactio.Core.Domain;
+using ReactioAPI.Core.Domain;
 
 namespace ReactioAPI.Core.Data
 {

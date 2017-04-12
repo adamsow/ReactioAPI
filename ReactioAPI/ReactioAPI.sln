@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26228.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactioAPI", "ReactioAPI\ReactioAPI.csproj", "{3E919AE8-BCBC-4A20-A4A7-D114249B75A8}"
 EndProject
@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactioAPI.Core", "ReactioA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactioAPI.Infrastructure", "ReactioAPI.Infrastructure\ReactioAPI.Infrastructure.csproj", "{3E65D1EB-C026-4EF1-A2AB-45CD242091C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactioAPI.Tests", "ReactioAPI.Tests\ReactioAPI.Tests.csproj", "{79BBAA90-9DA7-4228-9A61-8C2808ABE9AC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactioAPI.TestsEndToEnd", "ReactioAPI.TestsEndToEnd\ReactioAPI.TestsEndToEnd.csproj", "{FE447D5E-A377-483C-B2A0-59F1AB124B14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactioAPI.Tests", "ReactioAPI.Tests\ReactioAPI.Tests.csproj", "{4848FD47-9DE1-40DD-868D-85F941080BC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{3E65D1EB-C026-4EF1-A2AB-45CD242091C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E65D1EB-C026-4EF1-A2AB-45CD242091C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E65D1EB-C026-4EF1-A2AB-45CD242091C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79BBAA90-9DA7-4228-9A61-8C2808ABE9AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79BBAA90-9DA7-4228-9A61-8C2808ABE9AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79BBAA90-9DA7-4228-9A61-8C2808ABE9AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79BBAA90-9DA7-4228-9A61-8C2808ABE9AC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE447D5E-A377-483C-B2A0-59F1AB124B14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE447D5E-A377-483C-B2A0-59F1AB124B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE447D5E-A377-483C-B2A0-59F1AB124B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE447D5E-A377-483C-B2A0-59F1AB124B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4848FD47-9DE1-40DD-868D-85F941080BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4848FD47-9DE1-40DD-868D-85F941080BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4848FD47-9DE1-40DD-868D-85F941080BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4848FD47-9DE1-40DD-868D-85F941080BC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

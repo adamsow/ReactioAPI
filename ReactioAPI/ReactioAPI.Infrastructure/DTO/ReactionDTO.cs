@@ -1,8 +1,7 @@
-﻿using Reactio.Core.Domain;
-using ReactioAPI.Core.Domain;
+﻿using ReactioAPI.Core.Domain;
 using System.Collections.Generic;
 
-namespace Reactio.Infrastructure.DTO
+namespace ReactioAPI.Infrastructure.DTO
 {
     public class ReactionDTO
     {
@@ -19,5 +18,7 @@ namespace Reactio.Infrastructure.DTO
         public string Name { get; set; }
 
         public IEnumerable<Factor> Factors { get; set; }
+
+        public bool IsEndothermic { get; set; }
     }
 }

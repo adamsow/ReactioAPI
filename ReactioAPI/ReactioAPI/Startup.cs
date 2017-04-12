@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using ReactioAPI.Core.Repositories;
 using ReactioAPI.Infrastructure.Repositories;
 using ReactioAPI.Infrastructure.Services;
-using Reactio.Infrastructure.Mappers;
+using ReactioAPI.Infrastructure.Mappers;
 using ReactioAPI.Core.Data;
 using Microsoft.EntityFrameworkCore;
 using NLog.Extensions.Logging;

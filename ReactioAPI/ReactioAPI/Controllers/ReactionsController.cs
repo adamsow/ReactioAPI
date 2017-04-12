@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ReactioAPI.Infrastructure.Services;
-using Reactio.Infrastructure.DTO;
+using ReactioAPI.Infrastructure.DTO;
 using NLog;
 
 namespace ReactioAPI.Controllers

@@ -1,4 +1,4 @@
-﻿using Reactio.Infrastructure.DTO;
+﻿using ReactioAPI.Infrastructure.DTO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

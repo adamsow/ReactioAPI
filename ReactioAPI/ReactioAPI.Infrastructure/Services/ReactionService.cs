@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using NLog;
-using Reactio.Core.Domain;
-using Reactio.Infrastructure.DTO;
+using ReactioAPI.Core.Domain;
+using ReactioAPI.Infrastructure.DTO;
 using ReactioAPI.Core.Repositories;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

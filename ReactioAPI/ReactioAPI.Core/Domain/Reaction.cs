@@ -1,10 +1,8 @@
 ﻿using Newtonsoft.Json;
-using ReactioAPI.Core.Domain;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace Reactio.Core.Domain
+namespace ReactioAPI.Core.Domain
 {
     public class Reaction
     {

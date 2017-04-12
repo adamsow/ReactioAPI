@@ -1,7 +1,6 @@
 ﻿using ReactioAPI.Core.Repositories;
-using System;
 using System.Collections.Generic;
-using Reactio.Core.Domain;
+using ReactioAPI.Core.Domain;
 using System.Threading.Tasks;
 using ReactioAPI.Core.Data;
 using System.Linq;

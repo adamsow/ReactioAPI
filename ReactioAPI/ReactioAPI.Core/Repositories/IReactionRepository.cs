@@ -1,4 +1,4 @@
-﻿using Reactio.Core.Domain;
+﻿using ReactioAPI.Core.Domain;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
