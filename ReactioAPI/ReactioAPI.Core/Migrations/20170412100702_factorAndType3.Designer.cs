@@ -8,9 +8,10 @@ using ReactioAPI.Core.Data;
 namespace ReactioAPI.Core.Migrations
 {
     [DbContext(typeof(ReactioContext))]
-    partial class ReactioContextModelSnapshot : ModelSnapshot
+    [Migration("20170412100702_factorAndType3")]
+    partial class factorAndType3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -39,13 +40,9 @@ namespace ReactioAPI.Core.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Factor");
-
                     b.Property<bool>("IsEndothermic");
 
                     b.Property<string>("Name");
-
-                    b.Property<string>("Type");
 
                     b.HasKey("ID");
 

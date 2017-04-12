@@ -12,9 +12,9 @@ namespace Reactio.Infrastructure.DTO
 
         public IEnumerable<ProductDTO> Products { get; set; }
 
-        public Factor? Factor { get; set; }
+        public string Factor { get; set; }
 
-        public ReactionType? Type { get; set; }
+        public string Type { get; set; }
 
         public string Name { get; set; }
     }

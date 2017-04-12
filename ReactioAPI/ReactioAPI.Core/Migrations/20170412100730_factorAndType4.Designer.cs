@@ -8,9 +8,10 @@ using ReactioAPI.Core.Data;
 namespace ReactioAPI.Core.Migrations
 {
     [DbContext(typeof(ReactioContext))]
-    partial class ReactioContextModelSnapshot : ModelSnapshot
+    [Migration("20170412100730_factorAndType4")]
+    partial class factorAndType4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
