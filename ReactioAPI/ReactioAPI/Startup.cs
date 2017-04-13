@@ -55,6 +55,7 @@ namespace ReactioAPI
             
             env.ConfigureNLog("NLog.config");
 
+
             app.UseMvc();
         }
     }
