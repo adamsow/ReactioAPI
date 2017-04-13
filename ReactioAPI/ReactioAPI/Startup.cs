@@ -16,7 +16,6 @@ namespace ReactioAPI
 {
     public class Startup
     {
-        private string connectionString = null;
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -38,7 +37,7 @@ namespace ReactioAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            connectionString = Configuration["DefaultConnection"];
+            string connectionString = Configuration["DefaultConnection"];
             // Add framework services.
             services.AddMvc();
             services.AddScoped<IReactionRepository, DBReactionRepository>();

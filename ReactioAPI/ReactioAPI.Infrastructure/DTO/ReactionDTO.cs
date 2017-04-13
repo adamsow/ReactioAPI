@@ -11,8 +11,6 @@ namespace ReactioAPI.Infrastructure.DTO
 
         public IEnumerable<ProductDTO> Products { get; set; }
 
-        public string Factor { get; protected set; }
-
         public ReactionType Type { get; set; }
 
         public string Name { get; set; }

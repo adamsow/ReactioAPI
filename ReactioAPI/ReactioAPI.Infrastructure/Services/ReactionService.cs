@@ -5,6 +5,7 @@ using ReactioAPI.Infrastructure.DTO;
 using ReactioAPI.Core.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace ReactioAPI.Infrastructure.Services
 {
@@ -29,7 +30,9 @@ namespace ReactioAPI.Infrastructure.Services
 
             foreach (var reaction in reactions)
             {
-                reactionsDTO.Add(m_mapper.Map<Reaction, ReactionDTO>(reaction));
+                var reactionDTO = m_mapper.Map<Reaction, ReactionDTO>(reaction);
+                reactionDTO.Factors = JsonConvert.DeserializeObject<IEnumerable<Factor>>(reaction.Factor);
+                reactionsDTO.Add(reactionDTO);
                 m_logger.Debug("reaction name {0}", reaction.Name);
             }
 
