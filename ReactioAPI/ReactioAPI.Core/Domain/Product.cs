@@ -2,6 +2,10 @@
 {
     public class Product
     {
+        public Product()
+        {
+        }
+
         public Product(string name, int reactionID, string pattern)
         {
             Name = name;

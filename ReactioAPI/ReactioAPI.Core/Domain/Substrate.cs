@@ -2,6 +2,10 @@
 {
     public class Substrate
     {
+        public Substrate()
+        {
+        }
+
         public Substrate(string name, int reactionID, string pattern)
         {
             Name = name;
