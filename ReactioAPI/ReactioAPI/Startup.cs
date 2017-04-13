@@ -16,6 +16,7 @@ namespace ReactioAPI
 {
     public class Startup
     {
+        private string connectionString = null;
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -23,6 +24,12 @@ namespace ReactioAPI
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
+
             Configuration = builder.Build();
         }
 
@@ -31,19 +38,21 @@ namespace ReactioAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            connectionString = Configuration["DefaultConnection"];
             // Add framework services.
             services.AddMvc();
             services.AddScoped<IReactionRepository, DBReactionRepository>();
             services.AddScoped<IReactionService, ReactionService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddDbContext<ReactioContext>(options 
-                => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                => options.UseSqlServer(connectionString ?? Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddNLog();
+            
             env.ConfigureNLog("NLog.config");
 
             app.UseMvc();

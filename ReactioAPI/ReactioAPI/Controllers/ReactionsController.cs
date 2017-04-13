@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ReactioAPI.Infrastructure.Services;
-using ReactioAPI.Infrastructure.DTO;
 using NLog;
 
 namespace ReactioAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ReactionsController : Controller
     {
         private readonly IReactionService m_reactionService;
@@ -19,12 +17,14 @@ namespace ReactioAPI.Controllers
             m_reactionService = reactionService;
         }
         
-        // GET api/values
+        // GET api/reactions
         [HttpGet]
-        public async Task<IEnumerable<ReactionDTO>> Get()
+        public async Task<IActionResult> Get()
         {
             m_logger.Debug("Get reactions fired");
-            return await m_reactionService.GetReactionsAsync();
+            var reactions = await m_reactionService.GetReactionsAsync();
+
+            return Json(reactions);
         }
 
         // GET api/values/5

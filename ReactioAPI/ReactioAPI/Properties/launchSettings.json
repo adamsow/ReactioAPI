@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/reactions",
+      "launchUrl": "reactions",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

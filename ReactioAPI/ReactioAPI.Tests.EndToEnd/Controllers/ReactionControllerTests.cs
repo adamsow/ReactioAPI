@@ -29,7 +29,7 @@ namespace ReactioAPI.Tests.EndToEnd.Controllers
         [Fact]
         public async Task get_reactions_should_not_be_empty()
         {
-            var response = await m_client.GetAsync("api/reactions");
+            var response = await m_client.GetAsync("reactions");
             response.EnsureSuccessStatusCode();
 
             var responseString = await response.Content.ReadAsStringAsync();
