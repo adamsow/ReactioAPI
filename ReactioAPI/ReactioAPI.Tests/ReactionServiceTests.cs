@@ -1,17 +1,16 @@
-﻿using AutoMapper;
 using FluentAssertions;
-using Moq;
-using NUnit.Framework;
-using ReactioAPI.Core.Domain;
-using ReactioAPI.Infrastructure.DTO;
-using ReactioAPI.Core.Repositories;
+using Xunit;
 using ReactioAPI.Infrastructure.Services;
+using Moq;
+using ReactioAPI.Core.Repositories;
+using AutoMapper;
+using ReactioAPI.Core.Domain;
 using System.Collections.Generic;
+using ReactioAPI.Infrastructure.DTO;
 using System.Linq;
 
 namespace ReactioAPI.Tests
 {
-    [TestFixture]
     public class ReactionServiceTests
     {
         private IReactionService m_reactionService;
@@ -28,8 +27,7 @@ namespace ReactioAPI.Tests
 
         private Reaction m_reaction;
 
-        [SetUp]
-        public void SetUp()
+        public ReactionServiceTests()
         {
             m_substrateList = TestsHelper.SetupSubstartes();
             m_productList = TestsHelper.SetupProducts();
@@ -54,8 +52,9 @@ namespace ReactioAPI.Tests
             m_reactionService = new ReactionService(m_reactionRepositoryMock.Object, m_mapperMock.Object);
         }
 
-        [Test]
-        public void get_reactions_async_from_reaction_service_should_not_return_null()
+
+        [Fact]
+        public void get_reactions_async_from_reaction_service_should_not_be_empty()
         {
             //Arrange
 

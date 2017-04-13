@@ -1,6 +1,8 @@
 ﻿using ReactioAPI.Core.Domain;
 using ReactioAPI.Infrastructure.DTO;
+using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace ReactioAPI.Tests
 {
