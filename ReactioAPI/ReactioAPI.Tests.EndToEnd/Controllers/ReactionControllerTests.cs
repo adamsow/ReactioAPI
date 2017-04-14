@@ -35,7 +35,12 @@ namespace ReactioAPI.Tests.EndToEnd.Controllers
             var responseString = await response.Content.ReadAsStringAsync();
             var reactions = JsonConvert.DeserializeObject<IEnumerable<ReactionDTO>>(responseString);
 
-            reactions.Count().Should().BeGreaterThan(0);
+            reactions.Should().NotBeNullOrEmpty();
+            reactions.Should().BeOfType<List<ReactionDTO>>();
+
+            var reaction = reactions.FirstOrDefault();
+            reaction.Products.Should().NotBeNullOrEmpty();
+            reaction.Substrates.Should().NotBeNullOrEmpty();
         }
     }
 }
