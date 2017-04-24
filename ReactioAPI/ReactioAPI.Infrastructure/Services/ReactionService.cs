@@ -6,6 +6,7 @@ using ReactioAPI.Core.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System;
 
 namespace ReactioAPI.Infrastructure.Services
 {
@@ -26,15 +27,24 @@ namespace ReactioAPI.Infrastructure.Services
         public async Task<IEnumerable<ReactionDTO>> GetReactionsAsync()
         {
             var reactionsDTO = new List<ReactionDTO>();
-            var reactions = await m_reactionRepository.GetReactionsAsync();
 
-            foreach (var reaction in reactions)
+            try
             {
-                var reactionDTO = m_mapper.Map<Reaction, ReactionDTO>(reaction);
-                reactionDTO.Factors = JsonConvert.DeserializeObject<IEnumerable<Factor>>(reaction.Factor);
-                reactionsDTO.Add(reactionDTO);
-                m_logger.Debug("reaction name {0}", reaction.Name);
+                var reactions = await m_reactionRepository.GetReactionsAsync();
+
+                foreach (var reaction in reactions)
+                {
+                    var reactionDTO = m_mapper.Map<Reaction, ReactionDTO>(reaction);
+                    reactionDTO.Factors = !string.IsNullOrWhiteSpace(reaction.Factor) ? JsonConvert.DeserializeObject<IEnumerable<Factor>>(reaction.Factor) : null;
+                    reactionsDTO.Add(reactionDTO);
+                    m_logger.Debug("reaction name {0}", reaction.Name);
+                }
             }
+            catch (Exception ex)
+            {
+                m_logger.Error(ex);
+            }
+            
 
             return reactionsDTO;
         }
