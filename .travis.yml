@@ -11,3 +11,7 @@ script:
   - dotnet restore
   - dotnet build
   - dotnet test
+  - cd ../ReactioAPI.Tests.EndToEnd/
+  - dotnet restore
+  - dotnet build
+  - dotnet test
