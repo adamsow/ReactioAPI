@@ -13,5 +13,7 @@
         public int Quantity { get; set; }
 
         public bool IsSediment { get; set; }
+
+        public bool IsGas { get; set; }
     }
 }

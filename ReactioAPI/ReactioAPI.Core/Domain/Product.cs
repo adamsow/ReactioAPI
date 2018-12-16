@@ -6,7 +6,12 @@
         {
         }
 
-        public Product(string name, int reactionID, string pattern, int quantity, bool isSediment)
+        public Product(string name, 
+            int reactionID, 
+            string pattern, 
+            int quantity, 
+            bool isSediment,
+            bool isGas)
         {
             Name = name;
             ReactionID = reactionID;
@@ -28,5 +33,7 @@
         public virtual Reaction Reaction { get; protected set; }
 
         public bool IsSediment { get; protected set; }
+
+        public bool IsGas { get; protected set; }
     }
 }
