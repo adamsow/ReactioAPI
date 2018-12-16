@@ -16,8 +16,9 @@ namespace ReactioAPI.Controllers
         {
             m_reactionService = reactionService;
         }
-        
+
         // GET api/reactions
+        [ResponseCache(Duration = 3600)]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
