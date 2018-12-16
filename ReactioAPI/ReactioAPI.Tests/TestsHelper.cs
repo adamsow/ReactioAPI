@@ -13,14 +13,14 @@ namespace ReactioAPI.Tests
             return new Reaction("Methane synthesis", m_substrateList, m_productList,
                                       new List<Factor>() { Factor.Light, Factor.Temperature },
                                       ReactionType.Synthesis,
-                                      true);
+                                      true, true, false);
         }
 
         public static List<Product> SetupProducts()
         {
             return new List<Product>()
             {
-                new Product("Methane", 1, "CH4", 1)
+                new Product("Methane", 1, "CH4", 1, false)
             };
         }
 
