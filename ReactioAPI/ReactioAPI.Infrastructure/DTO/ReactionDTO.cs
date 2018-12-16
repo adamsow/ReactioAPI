@@ -18,5 +18,9 @@ namespace ReactioAPI.Infrastructure.DTO
         public IEnumerable<Factor> Factors { get; set; }
 
         public bool IsEndothermic { get; set; }
+
+        public bool IsRedox { get; set; }
+
+        public bool IsBothWays { get; set; }
     }
 }
