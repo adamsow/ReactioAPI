@@ -9,9 +9,10 @@ using ReactioAPI.Core.Domain;
 namespace ReactioAPI.Core.Migrations
 {
     [DbContext(typeof(ReactioContext))]
-    partial class ReactioContextModelSnapshot : ModelSnapshot
+    [Migration("20181216203329_AddedAppSettingKeyValue")]
+    partial class AddedAppSettingKeyValue
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")

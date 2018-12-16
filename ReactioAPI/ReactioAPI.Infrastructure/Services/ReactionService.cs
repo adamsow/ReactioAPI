@@ -28,7 +28,7 @@ namespace ReactioAPI.Infrastructure.Services
             try
             {
                 var reactions = await m_reactionRepository.GetReactionsAsync();
-                return m_mapper.Map<IEnumerable<Reaction>, IEnumerable<ReactionDTO>>(reactions);
+                return m_mapper.Map<IEnumerable<ReactionDTO>>(reactions);
             }
             catch (Exception ex)
             {

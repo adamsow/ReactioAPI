@@ -12,6 +12,7 @@ namespace ReactioAPI.Infrastructure.Mappers
                 cfg.CreateMap<Reaction, ReactionDTO>();
                 cfg.CreateMap<Product, ProductDTO>();
                 cfg.CreateMap<Substrate, SubstrateDTO>();
+                cfg.CreateMap<AppSetting, AppSettingDTO>();
             })
             .CreateMapper();
     }

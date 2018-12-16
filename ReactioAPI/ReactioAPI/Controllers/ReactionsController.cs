@@ -2,6 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using ReactioAPI.Infrastructure.Services;
 using NLog;
+using Microsoft.Extensions.Caching.Memory;
+using System;
+using ReactioAPI.Infrastructure.DTO;
+using ReactioAPI.Constants;
+using System.Collections.Generic;
 
 namespace ReactioAPI.Controllers
 {
@@ -9,12 +14,14 @@ namespace ReactioAPI.Controllers
     public class ReactionsController : Controller
     {
         private readonly IReactionService m_reactionService;
+        private readonly IMemoryCache m_cache;
 
         private static Logger m_logger = LogManager.GetCurrentClassLogger();
 
-        public ReactionsController(IReactionService reactionService)
+        public ReactionsController(IReactionService reactionService, IMemoryCache cache)
         {
             m_reactionService = reactionService;
+            m_cache = cache;
         }
 
         // GET api/reactions
@@ -23,7 +30,16 @@ namespace ReactioAPI.Controllers
         public async Task<IActionResult> Get()
         {
             m_logger.Debug("Get reactions fired");
-            var reactions = await m_reactionService.GetReactionsAsync();
+            var cacheExpirationOptions = new MemoryCacheEntryOptions
+            {
+                AbsoluteExpiration = DateTime.Now.AddMinutes(60),
+                Priority = CacheItemPriority.Normal
+            };
+            if (!m_cache.TryGetValue(CacheKeys.Reactions, out IEnumerable<ReactionDTO> reactions))
+            {
+                reactions = await m_reactionService.GetReactionsAsync();
+                m_cache.Set(CacheKeys.Reactions, reactions, cacheExpirationOptions);
+            }
 
             return Json(reactions);
         }

@@ -20,7 +20,7 @@ namespace ReactioAPI.Tests
         {
             return new List<Product>()
             {
-                new Product("Methane", 1, "CH4", 1, false)
+                new Product("Methane", 1, "CH4", 1, false, true)
             };
         }
 

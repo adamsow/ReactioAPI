@@ -40,8 +40,11 @@ namespace ReactioAPI
             string connectionString = Configuration["DefaultConnection"];
             // Add framework services.
             services.AddMvc();
+            services.AddMemoryCache();
             services.AddScoped<IReactionRepository, DBReactionRepository>();
             services.AddScoped<IReactionService, ReactionService>();
+            services.AddScoped<IAppSettingRepository, DBAppSettingRepository>();
+            services.AddScoped<IAppSettingService, AppSettingService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddDbContext<ReactioContext>(options 
                 => options.UseSqlServer(connectionString ?? Configuration.GetConnectionString("DefaultConnection")));
