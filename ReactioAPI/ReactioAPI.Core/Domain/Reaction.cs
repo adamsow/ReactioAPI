@@ -17,9 +17,11 @@ namespace ReactioAPI.Core.Domain
                         ReactionType type,
                         bool isEndothermic,
                         bool isRedox,
-                        bool isBothWays)
+                        bool isBothWays,
+                        string namePL)
         {
             Name = name;
+            NamePL = namePL;
             Substrates = substrates.ToList();
             products = products.ToList();
             Factor = JsonConvert.SerializeObject(factors);
@@ -32,6 +34,8 @@ namespace ReactioAPI.Core.Domain
         public int ID { get; protected set; }
 
         public string Name { get; protected set; }
+
+        public string NamePL { get; protected set; }
 
         public virtual ICollection<Substrate> Substrates { get; protected set; }
 

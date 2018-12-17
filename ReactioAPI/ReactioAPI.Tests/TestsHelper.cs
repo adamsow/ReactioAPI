@@ -13,14 +13,14 @@ namespace ReactioAPI.Tests
             return new Reaction("Methane synthesis", m_substrateList, m_productList,
                                       new List<Factor>() { Factor.Light, Factor.Temperature },
                                       ReactionType.Synthesis,
-                                      true, true, false);
+                                      true, true, false, "synteza metanu");
         }
 
         public static List<Product> SetupProducts()
         {
             return new List<Product>()
             {
-                new Product("Methane", 1, "CH4", 1, false, true)
+                new Product("Methane", 1, "CH4", 1, false, true, "Metan")
             };
         }
 
@@ -42,8 +42,8 @@ namespace ReactioAPI.Tests
         {
             return new List<Substrate>()
             {
-                new Substrate("Coal", 1, "C", 1),
-                new Substrate("Hydrogen", 1, "H4", 1)
+                new Substrate("Coal", 1, "C", 1, "węgiel"),
+                new Substrate("Hydrogen", 1, "H4", 1, "wodór")
 
             };
         }

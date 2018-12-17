@@ -7,6 +7,8 @@
         Decomposition,
         SingleDisplacement,
         DoubleDisplacement,
-        AcidBase
+        AcidBase,
+        Hydrolysis,
+        OxidationReduction
     }
 }

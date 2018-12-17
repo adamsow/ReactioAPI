@@ -35,11 +35,11 @@ namespace ReactioAPI.Controllers
                 AbsoluteExpiration = DateTime.Now.AddMinutes(60),
                 Priority = CacheItemPriority.Normal
             };
-            if (!m_cache.TryGetValue(CacheKeys.Reactions, out IEnumerable<ReactionDTO> reactions))
-            {
-                reactions = await m_reactionService.GetReactionsAsync();
-                m_cache.Set(CacheKeys.Reactions, reactions, cacheExpirationOptions);
-            }
+          //  if (!m_cache.TryGetValue(CacheKeys.Reactions, out IEnumerable<ReactionDTO> reactions))
+         //   {
+                var reactions = await m_reactionService.GetReactionsAsync();
+                //m_cache.Set(CacheKeys.Reactions, reactions, cacheExpirationOptions);
+         //   }
 
             return Json(reactions);
         }

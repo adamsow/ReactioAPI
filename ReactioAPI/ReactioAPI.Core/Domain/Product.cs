@@ -11,9 +11,11 @@
             string pattern, 
             int quantity, 
             bool isSediment,
-            bool isGas)
+            bool isGas,
+            string namePL)
         {
             Name = name;
+            NamePL = namePL;
             ReactionID = reactionID;
             Pattern = pattern;
             Quantity = quantity;
@@ -23,6 +25,8 @@
         public int ID { get; protected set; }
 
         public string Name { get; protected set; }
+
+        public string NamePL { get; protected set; }
 
         public int Quantity { get; protected set; }
 

@@ -6,17 +6,24 @@
         {
         }
 
-        public Substrate(string name, int reactionID, string pattern, int quantity)
+        public Substrate(string name, 
+            int reactionID, 
+            string pattern, 
+            int quantity,
+            string namePL)
         {
             Name = name;
             ReactionID = reactionID;
             Pattern = pattern;
             Quantity = quantity;
+            NamePL = namePL;
         }
 
         public int ID { get; protected set; }
 
         public string Name { get; protected set; }
+
+        public string NamePL { get; protected set; }
 
         public int Quantity { get; set; }
 
