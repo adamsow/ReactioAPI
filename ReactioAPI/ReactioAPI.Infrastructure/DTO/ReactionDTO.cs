@@ -15,6 +15,8 @@ namespace ReactioAPI.Infrastructure.DTO
 
         public string Name { get; set; }
 
+        public string NamePL { get; set; }
+
         public IEnumerable<Factor> Factors { get; set; }
 
         public bool IsEndothermic { get; set; }
