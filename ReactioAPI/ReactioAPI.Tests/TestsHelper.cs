@@ -20,7 +20,7 @@ namespace ReactioAPI.Tests
         {
             return new List<Product>()
             {
-                new Product("Methane", 1, "CH4", 1, false, true, "Metan")
+                new Product(1, 1, false, true, 1)
             };
         }
 
@@ -42,9 +42,8 @@ namespace ReactioAPI.Tests
         {
             return new List<Substrate>()
             {
-                new Substrate("Coal", 1, "C", 1, "węgiel"),
-                new Substrate("Hydrogen", 1, "H4", 1, "wodór")
-
+                new Substrate(1, 1, 1),
+                new Substrate(1, 1, 1)
             };
         }
     }

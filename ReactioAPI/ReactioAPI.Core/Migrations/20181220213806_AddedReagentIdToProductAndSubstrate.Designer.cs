@@ -9,9 +9,10 @@ using ReactioAPI.Core.Domain;
 namespace ReactioAPI.Core.Migrations
 {
     [DbContext(typeof(ReactioContext))]
-    partial class ReactioContextModelSnapshot : ModelSnapshot
+    [Migration("20181220213806_AddedReagentIdToProductAndSubstrate")]
+    partial class AddedReagentIdToProductAndSubstrate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -38,6 +39,12 @@ namespace ReactioAPI.Core.Migrations
 
                     b.Property<bool>("IsSediment");
 
+                    b.Property<string>("Name");
+
+                    b.Property<string>("NamePL");
+
+                    b.Property<string>("Pattern");
+
                     b.Property<int>("Quantity");
 
                     b.Property<int>("ReactionID");
@@ -47,8 +54,6 @@ namespace ReactioAPI.Core.Migrations
                     b.HasKey("ID");
 
                     b.HasIndex("ReactionID");
-
-                    b.HasIndex("ReagentID");
 
                     b.ToTable("Product");
                 });
@@ -77,7 +82,7 @@ namespace ReactioAPI.Core.Migrations
                     b.ToTable("Reaction");
                 });
 
-            modelBuilder.Entity("ReactioAPI.Core.Domain.Reagent", b =>
+            modelBuilder.Entity("ReactioAPI.Core.Domain.Substrate", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
@@ -87,16 +92,6 @@ namespace ReactioAPI.Core.Migrations
                     b.Property<string>("NamePL");
 
                     b.Property<string>("Pattern");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Reagent");
-                });
-
-            modelBuilder.Entity("ReactioAPI.Core.Domain.Substrate", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("Quantity");
 
@@ -108,8 +103,6 @@ namespace ReactioAPI.Core.Migrations
 
                     b.HasIndex("ReactionID");
 
-                    b.HasIndex("ReagentID");
-
                     b.ToTable("Substrate");
                 });
 
@@ -119,11 +112,6 @@ namespace ReactioAPI.Core.Migrations
                         .WithMany("Products")
                         .HasForeignKey("ReactionID")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ReactioAPI.Core.Domain.Reagent", "Reagent")
-                        .WithMany()
-                        .HasForeignKey("ReagentID")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ReactioAPI.Core.Domain.Substrate", b =>
@@ -131,11 +119,6 @@ namespace ReactioAPI.Core.Migrations
                     b.HasOne("ReactioAPI.Core.Domain.Reaction", "Reaction")
                         .WithMany("Substrates")
                         .HasForeignKey("ReactionID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ReactioAPI.Core.Domain.Reagent", "Reagent")
-                        .WithMany()
-                        .HasForeignKey("ReagentID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

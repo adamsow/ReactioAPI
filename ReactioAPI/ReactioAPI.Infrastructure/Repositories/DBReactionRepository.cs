@@ -21,8 +21,8 @@ namespace ReactioAPI.Infrastructure.Repositories
         {
             using (m_reactioContext)
             {
-                return await Task.Run(() => m_reactioContext.Reactions.Include(x => x.Substrates)
-                                                                      .Include(x => x.Products)
+                return await Task.Run(() => m_reactioContext.Reactions.Include(x => x.Substrates).ThenInclude(x => x.Reagent)
+                                                                      .Include(x => x.Products).ThenInclude(x => x.Reagent)
                                                                       .ToList());
             }
         }

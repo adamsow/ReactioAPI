@@ -9,9 +9,10 @@ using ReactioAPI.Core.Domain;
 namespace ReactioAPI.Core.Migrations
 {
     [DbContext(typeof(ReactioContext))]
-    partial class ReactioContextModelSnapshot : ModelSnapshot
+    [Migration("20181220214157_AddedReagentToProductAndSubstrate")]
+    partial class AddedReagentToProductAndSubstrate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -37,6 +38,12 @@ namespace ReactioAPI.Core.Migrations
                     b.Property<bool>("IsGas");
 
                     b.Property<bool>("IsSediment");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("NamePL");
+
+                    b.Property<string>("Pattern");
 
                     b.Property<int>("Quantity");
 
@@ -97,6 +104,12 @@ namespace ReactioAPI.Core.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("NamePL");
+
+                    b.Property<string>("Pattern");
 
                     b.Property<int>("Quantity");
 

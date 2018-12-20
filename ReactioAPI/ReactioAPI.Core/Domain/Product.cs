@@ -6,38 +6,34 @@
         {
         }
 
-        public Product(string name, 
-            int reactionID, 
-            string pattern, 
+        public Product(int reactionID, 
             int quantity, 
             bool isSediment,
             bool isGas,
-            string namePL)
+            int reagentID)
         {
-            Name = name;
-            NamePL = namePL;
             ReactionID = reactionID;
-            Pattern = pattern;
+            ReagentID = reagentID;
             Quantity = quantity;
             IsSediment = isSediment;
         }
 
         public int ID { get; protected set; }
 
-        public string Name { get; protected set; }
-
-        public string NamePL { get; protected set; }
-
         public int Quantity { get; protected set; }
 
         public int ReactionID { get; protected set; }
 
-        public string Pattern { get; protected set; }
+        public int ReagentID { get; protected set; }
 
         public virtual Reaction Reaction { get; protected set; }
+
+        public virtual Reagent Reagent { get; protected set; }
 
         public bool IsSediment { get; protected set; }
 
         public bool IsGas { get; protected set; }
+
+        
     }
 }

@@ -19,11 +19,11 @@ namespace ReactioAPI.Tests
 
         private Mock<IMapper> m_mapperMock;
 
-        private List<Reaction> m_reactionList;
+        private readonly List<Reaction> m_reactionList;
 
-        private List<Substrate> m_substrateList;
+        private readonly List<Substrate> m_substrateList;
 
-        private List<Product> m_productList;
+        private readonly List<Product> m_productList;
 
         private Reaction m_reaction;
 
