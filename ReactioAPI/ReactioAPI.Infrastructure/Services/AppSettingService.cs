@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using NLog;
-using ReactioAPI.Core.Domain;
 using ReactioAPI.Core.Repositories;
 using ReactioAPI.Infrastructure.DTO;
 

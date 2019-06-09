@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-namespace ReactioAPI.Core.Domain
+﻿namespace ReactioAPI.Core.Domain
 {
     public class Reagent
     {

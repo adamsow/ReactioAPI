@@ -1,8 +1,6 @@
 ﻿using ReactioAPI.Core.Data;
 using ReactioAPI.Core.Domain;
 using ReactioAPI.Core.Repositories;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ReactioAPI.Infrastructure.Repositories
@@ -17,11 +15,6 @@ namespace ReactioAPI.Infrastructure.Repositories
         }
 
         public async Task<AppSetting> GetByKeyAsync(string key)
-        {
-            using (m_reactioContext)
-            {
-                return await m_reactioContext.FindAsync<AppSetting>(key);
-            }
-        }
+            => await m_reactioContext.FindAsync<AppSetting>(key);
     }
 }

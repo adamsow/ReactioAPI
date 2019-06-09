@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using NLog;
-using ReactioAPI.Core.Domain;
 using ReactioAPI.Core.Repositories;
 using ReactioAPI.Infrastructure.DTO;
 using System;
