@@ -13,7 +13,7 @@ namespace ReactioAPI.Infrastructure.Mappers
             {
                 cfg.CreateMap<Reaction, ReactionDTO>()
                     .ForMember(dest => dest.Factors, opt => opt.MapFrom(src => 
-                !string.IsNullOrWhiteSpace(src.Factor) ? 
+                    !string.IsNullOrWhiteSpace(src.Factor) ? 
                 JsonConvert.DeserializeObject<IEnumerable<Factor>>(src.Factor) : null));
                 cfg.CreateMap<Product, ProductDTO>()
                     .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Reagent.Name))
@@ -24,6 +24,7 @@ namespace ReactioAPI.Infrastructure.Mappers
                     .ForMember(dest => dest.NamePL, opt => opt.MapFrom(src => src.Reagent.NamePL))
                     .ForMember(dest => dest.Pattern, opt => opt.MapFrom(src => src.Reagent.Pattern));
                 cfg.CreateMap<AppSetting, AppSettingDTO>();
+                cfg.CreateMap<Message, MessageDTO>();
             })
             .CreateMapper();
     }

@@ -4,5 +4,6 @@
     {
         public static string Version => "Version";
         public static string Reactions => "Reactions";
+        public static string Messages => "Messages";
     }
 }

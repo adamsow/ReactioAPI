@@ -19,7 +19,6 @@ namespace ReactioAPI.Infrastructure.Repositories
 
         public async Task<IEnumerable<Reaction>> GetReactionsAsync()
             => await Task.Run(() => m_reactioContext.Reactions.Include(x => x.Substrates).ThenInclude(x => x.Reagent)
-                                                                      .Include(x => x.Products).ThenInclude(x => x.Reagent)
-                                                                      .ToList());
+                                                                      .Include(x => x.Products).ThenInclude(x => x.Reagent));
     }
 }

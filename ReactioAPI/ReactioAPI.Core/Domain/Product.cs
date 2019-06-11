@@ -16,6 +16,7 @@
             ReagentID = reagentID;
             Quantity = quantity;
             IsSediment = isSediment;
+            IsGas = isGas;
         }
 
         public int ID { get; protected set; }
@@ -33,7 +34,5 @@
         public bool IsSediment { get; protected set; }
 
         public bool IsGas { get; protected set; }
-
-        
     }
 }

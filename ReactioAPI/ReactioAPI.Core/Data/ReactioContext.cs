@@ -14,12 +14,15 @@ namespace ReactioAPI.Core.Data
         public DbSet<Substrate> Substrates { get; set; }
         public DbSet<AppSetting> AppSettings { get; set; }
 
+        public DbSet<Message> Messages { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Reaction>().ToTable("Reaction");
             modelBuilder.Entity<Product>().ToTable("Product");
             modelBuilder.Entity<Substrate>().ToTable("Substrate");
             modelBuilder.Entity<AppSetting>().ToTable("AppSetting");
+            modelBuilder.Entity<Message>().ToTable("Message");
         }
     }
 }

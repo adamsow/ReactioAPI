@@ -45,6 +45,8 @@ namespace ReactioAPI
             services.AddScoped<IReactionService, ReactionService>();
             services.AddScoped<IAppSettingRepository, DBAppSettingRepository>();
             services.AddScoped<IAppSettingService, AppSettingService>();
+            services.AddScoped<IMessageRepository, DBMessageRepository>();
+            services.AddScoped<IMessageService, MessageService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddDbContext<ReactioContext>(options 
                 => options.UseSqlServer(connectionString ?? Configuration.GetConnectionString("DefaultConnection")));

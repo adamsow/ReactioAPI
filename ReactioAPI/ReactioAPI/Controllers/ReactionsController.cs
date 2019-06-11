@@ -17,8 +17,7 @@ namespace ReactioAPI.Controllers
         private readonly IReactionService m_reactionService;
         private readonly IAppSettingService m_appSettingsService;
         private readonly IMemoryCache m_cache;
-
-        private static Logger m_logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger m_logger = LogManager.GetCurrentClassLogger();
 
         public ReactionsController(IReactionService reactionService, IAppSettingService appSettingsService,
             IMemoryCache cache)

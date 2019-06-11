@@ -14,7 +14,7 @@ namespace ReactioAPI.Controllers
     {
         private readonly IAppSettingService m_appSettingService;
         private readonly IMemoryCache m_cache;
-        private static Logger m_logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger m_logger = LogManager.GetCurrentClassLogger();
 
         public AppSettingsController(IAppSettingService appSettingService, IMemoryCache cache)
         {
