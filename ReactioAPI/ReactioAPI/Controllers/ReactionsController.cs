@@ -12,7 +12,7 @@ using ReactioAPI.Infrastructure.Extensions;
 namespace ReactioAPI.Controllers
 {
     [Route("[controller]")]
-    public class ReactionsController : Controller
+    public class ReactionsController : BaseController
     {
         private readonly IReactionService m_reactionService;
         private readonly IAppSettingService m_appSettingsService;
@@ -20,7 +20,7 @@ namespace ReactioAPI.Controllers
         private static readonly Logger m_logger = LogManager.GetCurrentClassLogger();
 
         public ReactionsController(IReactionService reactionService, IAppSettingService appSettingsService,
-            IMemoryCache cache)
+            IMemoryCache cache) : base(appSettingsService)
         {
             m_reactionService = reactionService;
             m_appSettingsService = appSettingsService;
@@ -32,11 +32,6 @@ namespace ReactioAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> Get(string key = null)
         {
-            if (key.IsEmpty() || m_appSettingsService.GetByKeyAsync("Key").Result.AppSettingValue != key)
-            {
-                return Unauthorized();
-            }
-
             m_logger.Debug("Get reactions fired");
             var cacheExpirationOptions = new MemoryCacheEntryOptions
             {

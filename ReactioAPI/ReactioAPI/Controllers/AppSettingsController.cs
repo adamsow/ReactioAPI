@@ -10,15 +10,16 @@ using System.Threading.Tasks;
 namespace ReactioAPI.Controllers
 {
     [Route("[controller]")]
-    public class AppSettingsController : Controller
+    public class AppSettingsController : BaseController
     {
         private readonly IAppSettingService m_appSettingService;
         private readonly IMemoryCache m_cache;
         private static readonly Logger m_logger = LogManager.GetCurrentClassLogger();
 
-        public AppSettingsController(IAppSettingService appSettingService, IMemoryCache cache)
+        public AppSettingsController(IAppSettingService appSettingsService, IMemoryCache cache)
+            : base(appSettingsService)
         {
-            m_appSettingService = appSettingService;
+            m_appSettingService = appSettingsService;
             m_cache = cache;
         }
 
@@ -26,7 +27,7 @@ namespace ReactioAPI.Controllers
         [Route("Version")]
         [ResponseCache(Duration = 3600)]
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(string key = null)
         {
             m_logger.Debug("Get version fired");
             var cacheExpirationOptions = new MemoryCacheEntryOptions

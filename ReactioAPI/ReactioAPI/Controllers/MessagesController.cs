@@ -12,14 +12,15 @@ using System.Threading.Tasks;
 namespace ReactioAPI.Controllers
 {
     [Route("[controller]")]
-    public class MessagesController : Controller
+    public class MessagesController : BaseController
     {
         private readonly IMessageService m_messageService;
         private readonly IAppSettingService m_appSettingsService;
         private readonly IMemoryCache m_cache;
         private static readonly Logger m_logger = LogManager.GetCurrentClassLogger();
 
-        public MessagesController(IMessageService messageService, IMemoryCache cache, IAppSettingService appSettingsService)
+        public MessagesController(IMessageService messageService, IMemoryCache cache, IAppSettingService appSettingsService) 
+            : base(appSettingsService)
         {
             m_messageService = messageService;
             m_appSettingsService = appSettingsService;
@@ -31,11 +32,6 @@ namespace ReactioAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> Get(string key = null)
         {
-            if (key.IsEmpty() || m_appSettingsService.GetByKeyAsync("Key").Result.AppSettingValue != key)
-            {
-                return Unauthorized();
-            }
-
             m_logger.Debug("Get messages fired");
             var cacheExpirationOptions = new MemoryCacheEntryOptions
             {
